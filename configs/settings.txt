@@ -1,0 +1,200 @@
+Presets:
+Include this preset in all scripts to ensure consistent formatting and metadata.
+Add description, author, website, date, version, and copyright metadata to each script.
+Be descriptive and provide detailed descriptions for each script.
+Provide examples of how to use the script and what it does.
+Provide a copyright notice at the end of each script.
+Provide reset funtionality to reset the database to a clean state
+Add clear distinct sections of setup, data loading, analysis, and reset
+/*------------------------------------------------------------------------------
+  Snowflake Demo Script: <Name of script>
+  
+  Description: 
+<Detailed description here>
+  
+  Author: DemoHub Labs, All rights reserved.
+  Website: DemoHub.dev
+  Date: <Date of script creation>
+  Version: <Version number>
+  
+  Copyright: (c) <year> DemoHub.dev. All rights reserved.
+------------------------------------------------------------------------------*/
+
+
+Directory Structure
+Demo_factory/
+├── README.md
+├── commons/
+│   ├── datasets/
+│   │   ├── SalesDB/
+│   │   ├── CaresDB/
+│   │   ├── OrdersDB/
+│   │   ├── IoTDB/
+│   │   └── MediSnowDB/
+│   └── utils/
+├── advanced_warehousing/
+│   ├── README.md
+│   ├── 01_data_quality_metrics/
+│   │   ├── metrics_functions.sql
+│   │   └── README.md
+│   ├── 02_higher_order_functions/
+│   │   ├── hof_examples.sql
+│   │   └── README.md
+│   ├── 03_data_classification/
+│   │   ├── classification_tagging.sql
+│   │   └── README.md
+│   ├── 04_asof_join/
+│   │   ├── asof_examples.sql
+│   │   └── README.md
+│   ├── 05_fuzzy_matching/
+│   │   ├── soundex_matching.sql
+│   │   └── README.md
+│   ├── 06_aggregation_policies/
+│   │   ├── agg_policies.sql
+│   │   └── README.md
+│   ├── 07_projection_policies/
+│   │   ├── proj_policies.sql
+│   │   └── README.md
+│   ├── 08_jmeter_testing/
+│   │   ├── load_test.jmx
+│   │   └── README.md
+│   ├── 09_memoizable_functions/
+│   │   ├── memo_functions.sql
+│   │   └── README.md
+│   └── 10_observability/
+│       ├── trails.sql
+│       ├── logs_analysis.sql
+│       └── README.md
+├── engineering_lake/
+│   ├── README.md
+│   ├── 01_dynamic_tables/
+│   │   ├── dynamic_table_examples.sql
+│   │   ├── incremental_processing.sql
+│   │   └── README.md
+│   ├── 02_change_management_git/
+│   │   ├── README.md
+│   │   ├── migrations/
+│   │   │   ├── V1__initial_schema.sql
+│   │   │   └── V2__schema_updates.sql
+│   │   └── snowflake_git_integration.sql
+│   └── 03_change_management_templates/
+│       ├── README.md
+│       ├── jinja_templates/
+│       │   ├── table_template.sql.j2
+│       │   └── view_template.sql.j2
+│       └── sql_templates/
+│           ├── standard_tables.sql
+│           └── standard_views.sql
+├── classic_aiml/
+│   ├── README.md
+│   ├── 01_cortex_forecasting/
+│   │   ├── README.md
+│   │   ├── sales_forecasting.sql
+│   │   ├── demand_prediction.sql
+│   │   └── model_evaluation.sql
+│   ├── 02_cortex_anomaly_detection/
+│   │   ├── README.md
+│   │   ├── transaction_anomalies.sql
+│   │   └── anomaly_alerts.sql
+│   ├── 03_cortex_classification/
+│   │   ├── README.md
+│   │   ├── customer_segmentation.sql
+│   │   └── model_metrics.sql
+│   └── 04_snowpark_ml/
+│       ├── README.md
+│       ├── notebooks/
+│       │   ├── model_development.ipynb
+│       │   └── feature_engineering.ipynb
+│       ├── model_registry/
+│       │   └── model_metadata.sql
+│       └── feature_store/
+│           ├── feature_definitions.sql
+│           └── feature_pipeline.py
+├── genai_llms/
+│   ├── README.md
+│   ├── 01_embeddings_vector_search/
+│   │   ├── README.md
+│   │   ├── vector_store_setup.sql
+│   │   ├── embedding_generation.py
+│   │   └── similarity_search.sql
+│   ├── 02_copilot_integration/
+│   │   ├── README.md
+│   │   ├── copilot_setup.sql
+│   │   └── custom_actions.py
+│   ├── 03_universal_search/
+│   │   ├── README.md
+│   │   ├── search_configuration.sql
+│   │   └── search_examples.sql
+│   ├── 04_streamlit_chatbot/
+│   │   ├── README.md
+│   │   ├── app.py
+│   │   └── chat_interface.py
+│   ├── 05_document_ai/
+│   │   ├── README.md
+│   │   ├── document_processing.sql
+│   │   └── extraction_examples.sql
+│   └── 06_cortex_llm_finetuning/
+│       ├── README.md
+│       ├── data_preprocessing.py
+│       └── training_script.py
+├── applications/
+│   ├── README.md
+│   ├── 01_native_apps/
+│   │   ├── app_package.sql
+│   │   ├── listing_setup.sql
+│   │   └── README.md
+│   ├── 02_streamlit/
+│   │   ├── data_app.py
+│   │   ├── snowflake_connection.py
+│   │   └── README.md
+│   ├── 03_snowsight_dashboards/
+│   │   ├── chart_examples.sql
+│   │   ├── dashboard_setup.sql
+│   │   └── README.md
+│   ├── 04_external_connect/
+│   │   ├── tableau_integration.sql
+│   │   ├── powerbi_setup.sql
+│   │   └── README.md
+│   ├── 05_python_integration/
+│   │   ├── snowpark_examples.py
+│   │   ├── connector_usage.py
+│   │   └── README.md
+│   └── 06_restful_apis/
+│       ├── api_integration.sql
+│       ├── external_functions.sql
+│       └── README.md
+├── collaboration_sharing/
+│   ├── README.md
+│   ├── 01_marketplace/
+│   │   ├── provider_setup.sql
+│   │   ├── listing_management.sql
+│   │   └── README.md
+│   ├── 02_data_clean_room/
+│   │   ├── room_setup.sql
+│   │   ├── secure_sharing.sql
+│   │   └── README.md
+│   ├── 03_data_exchange/
+│   │   ├── exchange_setup.sql
+│   │   ├── provider_config.sql
+│   │   └── README.md
+│   ├── 04_secure_data_sharing/
+│   │   ├── share_creation.sql
+│   │   ├── reader_account.sql
+│   │   └── README.md
+│   └── 05_collaboration_tools/
+│       ├── object_tagging.sql
+│       ├── resource_monitoring.sql
+│       └── README.md
+└── admins_ops/
+    ├── README.md
+    ├── 01_metadata_queries/
+    │   ├── metadata_queries.sql
+    │   └── README.md
+    ├── 02_trust_center/
+    │   ├── compliance_monitoring.sql
+    │   ├── security_monitoring.sql
+    │   └── README.md
+    └── 03_cost_insights/
+        ├── cost_monitoring.sql
+        ├── optimization_queries.sql
+        └── README.md

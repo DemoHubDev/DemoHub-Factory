@@ -1,4 +1,4 @@
-# 🏭 DemoHub Factory | Modern Data Tools
+![Modern Data Tools - Demos & Tutorials](./assets/banner.png)
 
 Welcome to DemoHub Factory - Join a global network of 10,000+ data professionals revolutionizing their data workflow through hands-on learning.
 
