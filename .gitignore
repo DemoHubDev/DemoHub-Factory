@@ -33,4 +33,7 @@ logs
 # Operating System Files
 Thumbs.db
 ehthumbs.db
-Desktop.ini 
+Desktop.ini
+
+# Settings directory
+configs/
